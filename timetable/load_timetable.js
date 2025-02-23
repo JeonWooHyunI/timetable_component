@@ -15,7 +15,7 @@ function load_timetable() {
         timeSlot.textContent = `${hour}`;
         timetable.appendChild(timeSlot);
 
-        for (let day = 0; day < 5; day++) {
+        for (let day = 0; day < days.length; day++) {
             const cell = document.createElement('div');
             cell.className = 'cell';
             cell.dataset.time = `${hour}`;
@@ -26,8 +26,14 @@ function load_timetable() {
 }
 
 const courses = [
-
+    {
+        course_name : '테스트',
+        schedule : '화 10:00~12:00',
+        classroom : '공학관 0000'
+    }
 ];
+
+load_cell()
 
 function load_cell() {
     const colors = [
@@ -160,6 +166,7 @@ function load_cell() {
     });
 }
 
+/*화면의 사이즈가 변경될때 테이블의 그리드와 오버레이를 재정렬*/
 window.addEventListener("resize", function() {
     document.querySelectorAll('.time, .cell').forEach(el => el.remove());
     document.querySelectorAll('.overlay, .current-time-line').forEach(el => el.remove());

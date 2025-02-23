@@ -1,6 +1,6 @@
 .timetable {
     display: grid;
-    grid-template-columns: auto repeat(5, 1fr);
+    grid-template-columns: auto repeat(5, 1fr); /*격자 그리드의 column 수 조절 (기본 5열)*/
     gap: 1px;
     background-color: #ddd;
     border: 1px solid #ddd;
